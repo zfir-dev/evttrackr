@@ -3,16 +3,20 @@ from simple_salesforce import Salesforce
 username = 'your_username'
 password = 'your_password'
 security_token = 'your_security_token'
-client_id = 'your_client_id'
-client_secret = 'your_client_secret'
 
-record_id = 'your_record_id'
+record_id = 'a0OJ7000000L08BMAS'
 
 new_data = {
-    'Status': 'Updated',
+    'evttrackr_Status__c': 'Not registered'
 }
 
-sf = Salesforce(username=username, password=password, security_token=security_token,
-                client_id=client_id, client_secret=client_secret)
+from simple_salesforce import Salesforce
 
-sf.evttracker_EvtTrackrTicket.update(record_id, new_data)
+def my_salesforce_function():
+    sf = Salesforce(username=username, password=password, security_token=security_token)
+
+    try:
+        sf.evttrackr_EvtTrackrTicket__c.update(record_id, new_data)
+        return True, "Record updated successfully"
+    except Exception as e:
+        return False, f"Failed to update record: {str(e)}"
