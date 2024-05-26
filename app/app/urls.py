@@ -16,9 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import my_view
+from .views import register
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('salesforce/', my_view),
+    path('register/<str:record_id>/', register),
 ]
