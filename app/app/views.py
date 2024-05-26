@@ -6,4 +6,4 @@ def my_view(request):
     result = my_salesforce_function()
 
     # Process the result and return an appropriate response
-    return render(request, 'my_template.html', {'result': result})
+    return render(request, 'update.html', {'result': result})
