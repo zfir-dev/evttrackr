@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "evttrackr Monorepo",
   "scripts": {
-    "start:django": "cd packages/django && python manage.py runserver",
+    "start:app": "cd packages/app && docker-compose up",
     "test:sfdx": "cd packages/sfdx && sfdx force:apex:test:run"  
   },
   "workspaces": [
