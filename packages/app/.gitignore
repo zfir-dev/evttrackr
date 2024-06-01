@@ -1,5 +1,10 @@
+# Cache files
 **/__pycache__/
 **/.venv/
 **/venv/
 
+# DB file
 db.sqlite3
+
+# MacOS system files
+.DS_Store
