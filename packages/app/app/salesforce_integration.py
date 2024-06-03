@@ -13,9 +13,9 @@ def get_status(record_id):
         return False, "Record ID is required"
     try:
         record = sf.evttrackr_EvtTrackrTicket__c.get(record_id)
-        return True, "Record fetched successfully", record, None
+        return True, "Record fetched successfully", record
     except Exception as e:
-        return False, f"Failed to fetch record: {str(e)}"
+        return False, f"Failed to fetch record: {str(e)}", None
 
 def set_status(record_id, status):
     if not sf:
