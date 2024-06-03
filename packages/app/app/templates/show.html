@@ -2,7 +2,13 @@
 <html>
   <head>
     <title>Show</title>
+    {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %}
   </head>
   <body>
-    <img src="data:image/png;base64,{{ result.qr_code }}" />
+    <img
+      class="img"
+      src="data:image/png;base64,{{ result.qr_code }}"
+      alt="qr_code"
+    />
   </body>
+</html>
