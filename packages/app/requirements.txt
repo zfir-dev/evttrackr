@@ -1,2 +1,4 @@
 Django==5.0.6
 simple-salesforce==1.12.6
+qrcode==7.4.2
+pillow==10.3.0

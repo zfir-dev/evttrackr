@@ -1,8 +1,8 @@
 from simple_salesforce import Salesforce
 
-username = 'your_username'
-password = 'your_password'
-security_token = 'your_security_token'
+username = 'zafir@deved.com'
+password = '&9nXhpLbzQ7LGgsX'
+security_token = 'fe9BrRCL8Mhi9nsK4l0jnvgCO'
 
 sf = Salesforce(username=username, password=password, security_token=security_token)
 
@@ -15,7 +15,7 @@ def get_status(record_id):
         record = sf.evttrackr_EvtTrackrTicket__c.get(record_id)
         return True, "Record fetched successfully", record
     except Exception as e:
-        return False, f"Failed to fetch record: {str(e)}"
+        return False, f"Failed to fetch record: {str(e)}", None
 
 def set_status(record_id, status):
     if not sf:
@@ -29,4 +29,4 @@ def set_status(record_id, status):
         sf.evttrackr_EvtTrackrTicket__c.update(record_id, new_data)
         return True, "Record updated successfully", record_id
     except Exception as e:
-        return False, f"Failed to update record: {str(e)}"
+        return False, f"Failed to update record: {str(e)}", None

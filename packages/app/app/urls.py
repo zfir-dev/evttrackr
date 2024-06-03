@@ -17,8 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import register
+from .views import show
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('<str:record_id>/', show),
     path('register/<str:record_id>/', register),
 ]
